@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const BASE = 'http://localhost:8080/api/auth';
+const API_BASE = import.meta.env.VITE_API_URL ?? 'https://kys-backend-production.up.railway.app';
+const BASE = `${API_BASE}/api/auth`;
 
 export const authApi = {
   login: (username, password) =>

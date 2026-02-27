@@ -27,7 +27,7 @@ export const documentsApi = {
     fd.append('file', file);
     return client.post(`${BASE}/documents/${id}/upload`, fd);
   },
-  downloadUrl: (id) => `http://localhost:8080/api/dms/documents/${id}/download`,
+  downloadUrl: (id) => `${import.meta.env.VITE_API_URL ?? 'https://kys-backend-production.up.railway.app'}/api/dms/documents/${id}/download`,
 };
 
 export const distributionsApi = {
